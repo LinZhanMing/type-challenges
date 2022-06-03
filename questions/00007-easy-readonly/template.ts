@@ -1,1 +1,4 @@
-type MyReadonly<T> = any
+type MyReadonly<T extends object> = {
+  readonly [P in keyof T]: T[P]
+}
+
